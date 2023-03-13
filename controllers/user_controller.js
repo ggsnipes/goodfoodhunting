@@ -29,10 +29,8 @@ router.post("/users", (req, res) => {
     db.query(sqlCheck, (err, dbRes) => {
         if(err){
             const sql = `INSERT INTO users VALUES ('$1, '$2');`
-
-            db.query(sqlSignUp(email, password), (err, dbRes) => {
-                res.redirect("/")
-            })
+            sqlSignUp(email, password)
+            res.redirect("/")
         } else {
             res.redirect("/login")
         }
@@ -49,11 +47,16 @@ router.get("/users/new", (req, res) => {
 
 function sqlSignUp(email, password) {
     bcrypt.hash(password, saltRounds, (err, hash) => {
-        let hashPw = hash
+        const sql = `INSERT INTO users (email, password_digest) VALUES ('${email}', '${hash}');`
+
+        db.query(sql, (err, dbRes) => {
+            console.log(err)
+        })
     })
 
-    const sql = `INSERT INTO users VALUES ('${email}', '${hashPw}');`
+}
 
+function hashPW(password) {
 
 }
 

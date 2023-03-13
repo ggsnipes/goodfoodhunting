@@ -17,9 +17,9 @@ router.get("/users/:id") // get single user
 
 */
 
-router.get("/users", (req, res) => {
-    res.send("dont press this for now thanks")
-})
+// router.get("/users", (req, res) => {
+//     res.send("dont press this for now thanks")
+// })
 
 
 router.post("/users", (req, res) => {
@@ -28,7 +28,7 @@ router.post("/users", (req, res) => {
 
     db.query(sqlCheck, (err, dbRes) => {
         if(err){
-            const sql = `INSERT INTO users VALUES ('$1, '$2');`
+            // const sql = `INSERT INTO users VALUES ('$1, '$2');`
             sqlSignUp(email, password)
             res.redirect("/")
         } else {

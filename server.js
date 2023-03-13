@@ -10,6 +10,7 @@ const methodOverride = require("./middlewares/method_override")
 
 const dishController = require("./controllers/dish_controller")
 const sessionController = require("./controllers/session_controller")
+const userController = require("./controllers/user_controller")
 
 const expressLayouts = require("express-ejs-layouts")
 
@@ -32,6 +33,7 @@ app.use(viewHelpers)
 
 app.use(sessionController)
 app.use(dishController)
+app.use(userController)
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`)

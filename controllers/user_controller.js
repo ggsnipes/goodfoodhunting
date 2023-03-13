@@ -56,3 +56,5 @@ function sqlSignUp(email, password) {
 
 
 }
+
+module.exports = router

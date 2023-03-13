@@ -42,7 +42,7 @@ router.post("/users", (req, res) => {
 })
 
 
-router.get("users/new", (req, res) => {
+router.get("/users/new", (req, res) => {
     res.render("signup")
 })
 

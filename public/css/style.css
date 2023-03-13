@@ -1,0 +1,21 @@
+body {
+  background-color: aliceblue;
+}
+
+img {
+  width: 100px;
+}
+
+.dishes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+}
+
+.ui-card {
+  background-color: floralwhite;
+}
+
+.ui-card img {
+  width: 100%;
+}
